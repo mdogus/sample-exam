@@ -1,0 +1,18 @@
+#set("content") {
+    <h1>Türkçe Sınav Soruları</h1>
+    
+    #if(questions) {
+        #for(question in questions) {
+            <h3>#(question.titleOfQuestion)</h3>
+            <p>#(question.questionStem)</p>
+            <p>#(question.choiceA)</p>
+            <p>#(question.choiceB)</p>
+            <p>#(question.choiceC)</p>
+            <p>#(question.choiceD)</p>
+        }
+    } else {
+        <h6>Kaydedilmiş soru yok.</h6>
+    }
+}
+
+#embed("base-admin")

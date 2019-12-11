@@ -1,0 +1,10 @@
+#set("content") {
+
+    #for(question in allQuestions) {
+        <h1>#(question.titleOfTest)</h1>
+        <h2>#(question.titleOfQuestion)</h>
+        <p>#(question.questionStem)</p>
+    }
+}
+
+#embed("base")

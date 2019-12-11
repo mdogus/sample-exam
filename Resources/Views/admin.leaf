@@ -1,0 +1,5 @@
+#set("content") {
+    <h3>Hoş geldiniz!</h3>
+}
+
+#embed("base-admin")

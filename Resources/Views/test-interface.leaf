@@ -1,0 +1,64 @@
+#set("content") {
+    #if(questions) {
+    
+    <!-- dinleme bölgesi -->
+    <div id="listen">
+    <button type="button" class="button-listen"><i class="fas fa-volume-up" style="font-size:36px;float:left"></i>Soruyu<br>Dinle</button>
+    <button type="button" class="button-listen"><i class="fas fa-volume-up" style="font-size:36px;float:left"></i>Seçenekleri<br>Dinle</button>
+    </div>
+    
+    <!--Soru bölgesi-->
+    <div id="soru" role="region" aria-label="Soru">
+    <h1 class="soru">#(titleOfTest):<br>#(titleOfQuestion)</h1>
+    <p class="soru">#(questionStem)</p>
+  
+    </div>
+    
+    <!--Seçenekler bölgesi-->
+    <div id="secenekler" role="region" aria-label="Seçenekler" style="margin:30px">
+    <form>
+    <label class="container2">
+    <p>#(choiceA)</p>
+    <input type="radio" name="soru1" checked="checked"
+    aria-label="#(choiceA)">
+    <span class="checkmark2">A</span>
+    </label>
+    <label class="container2">
+    <p>#(choiceB)</p>
+    <input type="radio" name="soru1" checked="checked"
+    aria-label="#(choiceB)">
+    <span class="checkmark2">B</span>
+    </label>
+    <label class="container2">
+    <p>#(choiceC)</p>
+    <input type="radio" name="soru1" checked="checked"
+    aria-label="#(choiceC)">
+    <span class="checkmark2">C</span>
+    </label>
+    <label class="container2">
+    <p>#(choiceD)</p>
+    <input type="radio" name="soru1" checked="checked"
+    aria-label="#(choiceD)">
+    <span class="checkmark2">D</span>
+    </label>
+    </form>
+
+    <div align="center">
+    <button type="button" class="button" title="Sonraki soruya gider"><i class="fas fa-arrow-right" style="font-size:52px"></i><br>Sonraki</button>
+    <button type="button" class="button" title="Önceki soruya gider"><i class="fas fa-arrow-left" style="font-size:52px"></i><br>Önceki</button>
+    <button type="button" class="button" title="Soruya daha sonra tekrar bakmak için işaret koyun"><i class="fas fa-flag" style="font-size:52px"></i><br>İşaret Koy</button>
+    <button type="button" class="button" title="Seçimi kaldırır ve soruyu boş bırakır"><i class="far fa-circle" style="font-size:52px"></i><br>Boş Bırak</button>
+    </div>
+    </div>
+
+    <form action="/test-interface" method="POST">
+    <label for="note"><h3>Not ekle:</h3></label>
+    <input type="text" id="note" name="noteTaken" placeHolder="Soru veya seçeneklerle ilgili not ekle...">
+    </form>
+    
+    } else {
+        <p>Soru bulunamadı.</p>
+    }
+}
+
+#embed("base-test")

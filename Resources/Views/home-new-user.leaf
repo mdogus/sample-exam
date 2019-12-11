@@ -1,0 +1,32 @@
+#set("content") {
+    <h1>Yeni Kullanıcı</h1>
+    
+    <form action="/login/new-user" method="post">
+        <label for="name"><h3 class="label-home-login">Adı:</h3></label>
+        <input type="text" class="home-login" id="name" name="name" placeHolder="Yazınız...">
+        
+        <label for="surname"><h3 class="label-home-login">Soyadı:</h3></label>
+        <input type="text" class="home-login" id="surname" name="surname" placeHolder="Yazınız...">
+        
+        <label for="gender"><h3 class="label-home-login">Cinsiyet:</h3></label>
+        <input type="text" class="home-login" id="gender" name="gender" placeHolder="Yazınız...">
+        
+        <label for="school"><h3 class="label-home-login">Okul:</h3></label>
+        <input type="text" class="home-login" id="school" name="school" placeHolder="Yazınız...">
+        
+        <label for="grade"><h3 class="label-home-login">Sınıf:</h3></label>
+        <input type="text" class="home-login" id="grade" name="grade" placeHolder="Yazınız...">
+        
+        <label for="user-name"><h3 class="label-home-login">Kullanıcı Adı:</h3></label>
+        <input type="text" class="home-login" id="user-name" name="userName" placeHolder="Yazınız...">
+        
+        <label for="user-password"><h3 class="label-home-login">Parola:</h3></label>
+        <input type="text" class="home-login" id="user-password" name="password" placeHolder="Yazınız...">
+    <br>
+    <input type="submit">
+    </form>
+}
+
+#embed("base-home")
+
+

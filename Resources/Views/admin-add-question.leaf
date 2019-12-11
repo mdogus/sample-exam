@@ -1,0 +1,55 @@
+#set("content") {
+    <form action="/admin/add-question" method="post">
+    <label for="title-test"><h3 class="label-add-question">Sınav başlığı:</h3></label>
+    <input type="text" class="text-add-question" id="title-test" name="titleOfTest" placeHolder="Yazınız...">
+    <label for="title-question"><h3 class="label-add-question">Soru başlığı:</h3></label>
+    <input type="text" class="text-add-question" id="title-question" name="titleOfQuestion" placeHolder="Yazınız...">
+    <label for="question-stem"><h3 class="label-add-question">Soru kökü:</h3></label>
+    <input type="text" class="text-add-question" id="question-stem" name="questionStem" placeHolder="Yazınız...">
+    <label for="choice-a"><h3 class="label-add-question">A seçeneği:</h3></label>
+    <input type="text" class="text-add-question" id="choice-a" name="choiceA" placeHolder="Yazınız...">
+    <label for="choice-b"><h3 class="label-add-question">B seçeneği:</h3></label>
+    <input type="text" class="text-add-question" id="choice-b" name="choiceB" placeHolder="Yazınız...">
+    <label for="choice-c"><h3 class="label-add-question">C seçeneği:</h3></label>
+    <input type="text" class="text-add-question" id="choice-c" name="choiceC" placeHolder="Yazınız...">
+    <label for="choice-d"><h3 class="label-add-question">D seçeneği:</h3></label>
+    <input type="text" class="text-add-question" id="choice-d" name="choiceD" placeHolder="Yazınız...">
+    <label for="choice-e"><h3 class="label-add-question">E seçeneği:</h3></label>
+    <input type="text" class="text-add-question" id="choice-e" name="choiceE" placeHolder="Yazınız...">
+    <label for="note-taken"><h3 class="label-add-question">Eklenen not:</h3></label>
+    <input type="text" class="text-add-question" id="note-taken" name="noteTaken" placeHolder="Yazınız...">
+    
+    <label for="is-answered"><h3 class="label-add-question">Soru cevaplandı mı?</h3></label>
+        <label class="container1" for="is-answered">
+        <p>Evet</p>
+        <input type="radio" id="is-answered" name="isAnswered"  aria-label="Evet" value="true">
+        <span class="checkmark1"></span>
+        </label>
+        <label class="container1" for="is-answered">
+        <p>Hayır</p>
+        <input type="radio" id="is-answered" name="isAnswered"  checked="checked" aria-label="Hayır" value="false">
+        <span class="checkmark1"></span>
+        </label>
+    <label for="is-bookmark-added"><h3 class="label-add-question">Soruya yer işareti konuldu mu?</h3></label>
+        <label class="container1" for="is-bookmark-added">
+        <p>Evet</p>
+        <input type="radio" id="is-bookmark-added" name="isBookmarkAdded"  aria-label="Evet" value="true">
+        <span class="checkmark1"></span>
+        </label>
+        <label class="container1" for="is-bookmark-added">
+        <p>Hayır</p>
+        <input type="radio" id="is-bookmark-added" name="isBookmarkAdded" checked="checked" aria-label="Hayır" value="false">
+        <span class="checkmark1"></span>
+        </label>
+    
+    <label for="audio-question"><h3 class="label-add-question">Soru ses dosyası:</h3></label>
+    <input type="text" class="text-add-question" id="audio-question" name="audioOfQuestion" placeHolder="Yazınız...">
+    <label for="audio-choices"><h3 class="label-add-question">Seçenekler ses dosyası:</h3></label>
+    <input type="text" class="text-add-question" id="audio-choices" name="audioOfChoices" placeHolder="Yazınız...">
+    
+    <input type="submit">
+    </form>
+}
+
+#embed("base-admin")
+

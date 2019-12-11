@@ -1,0 +1,102 @@
+<html lang="tr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Yönetici Paneli</title>
+    <link rel="stylesheet" href="/css/StyleSheet1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body class="soru">
+
+<div id="header-soru">
+
+<div style="position:absolute;top:2%;left:8%">
+<p style="display:inline;color:midnightblue"><i class="fas fa-user-alt" style="float:left;font-size: 30px;color:midnightblue"></i>Yönetici Paneli</p>
+</div>
+
+<br>
+<br>
+
+<nav aria-label="Kontrol paneli">
+<div class="navbar">
+  <div class="dropdown">
+  <form method="get" action="/admin">
+    <button class="dropbtn" title="Ana sayfaya gider.">
+    <i class="far fa-question-circle"></i>
+    Ana Sayfa
+    </button>
+  </form>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()" title="Açılır menü">
+  <i class="fas fa-eye"></i>
+  Sınavlar
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="/admin/tests/turkish" method="get">Türkçe</a>
+    <a href="#">Sosyal Bilimler</a>
+    <a href="#">Matematik</a>
+  </div>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn" title="Erişilebilirlik ayarlarına gider." onclick="myFunctionForUsers()">
+  <i class="fab fa-accessible-icon"></i>
+  Kullanıcılar
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdownForUsers">
+    <a href="#">Tüm Kullanıcılar</a>
+    <a href="#">Kullanıcı Sınav Kayıtları</a>
+  </div>
+  </div>
+  <div class="dropdown">
+  <form method="get" action="/admin/add-question">
+    <button class="dropbtn" title="Yeni soru ekler.">
+    <i class="far fa-question-circle"></i>
+    Yeni Soru
+    </button>
+  </form>
+  </div>
+  
+
+</div>
+</nav>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function myFunctionForUsers() {
+  document.getElementById("myDropdownForUsers").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</div>
+
+<div id="main-content-admin">
+
+    #get(content)
+    
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,14 @@
+#set("content") {
+    <h1 align="center">Giriş Yap</h1>
+    
+    <div align="center">
+    <a href="/admin" class="button">
+    Yönetici</a>
+    <br>
+    <a href="#" class="button">
+    Kullanıcı</a>
+    </div>
+    
+}
+
+#embed("base-home")
