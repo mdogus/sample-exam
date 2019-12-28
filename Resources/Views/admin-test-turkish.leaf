@@ -1,18 +1,42 @@
 #set("content") {
+    
     <h1>Türkçe Sınav Soruları</h1>
     
     #if(questions) {
+        <table class="table table-striped table-bordered table-hover table-dark">
+        <caption>Kullanıcı listesi</caption>
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">No</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Soru</th>
+            <th scope="col">Soruyu Sil</th>
+            </tr>
+        </thead>
+        <tbody>
         #for(question in questions) {
-            <h3>#(question.titleOfQuestion)</h3>
-            <p>#(question.questionStem)</p>
-            <p>#(question.choiceA)</p>
-            <p>#(question.choiceB)</p>
-            <p>#(question.choiceC)</p>
-            <p>#(question.choiceD)</p>
+            <tr>
+            <th scope="raw">#(question.id)</th>
+            <td><a href="/admin/tests/turkish/#(question.id)"><h4>#(question.titleOfQuestion)</h4></a></td>
+            <td>
+                #(question.questionStem)<br><br>
+                #(question.choiceA)<br>
+                #(question.choiceB)<br>
+                #(question.choiceC)<br>
+                #(question.choiceD)
+            </td>
+            <td><form action="/delete-turkish-question" method="post">
+                <input type="hidden" name="questionId" value='#(question.id)'></input>
+                <input type="submit" value="Sil" class="btn btn-outline-primary" aria-label="Sil: Soru #(question.id)"></input>
+            </form></td>
+            </tr>
         }
+        </tbody>
+        </table>
     } else {
         <h6>Kaydedilmiş soru yok.</h6>
     }
+    
 }
 
-#embed("base-admin")
+#embed("base-admin-bs")

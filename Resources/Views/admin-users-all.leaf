@@ -1,0 +1,28 @@
+#set("content") {
+    <h1>Kullanıcılar</h1>
+        
+    #if(users) {
+        <ol>
+        #for(user in users) {
+            <li>
+            <div>
+            <label><a href="/admin/users/#(user.id)"><p><b>Adı, Soyadı:</b> #(user.name) #(user.surname)</p></a></label>
+            <p><b>Cinsiyeti:</b> #(user.gender)</p>
+            <p><b>Okulu:</b> #(user.school)</p>
+            <p><b>Sınıfı:</b> #(user.gender)</p>
+            <p><b>Kullanıcı Adı:</b> #(user.userName)</p>
+            <p><b>Parola:</b> #(user.password)</p>
+            <form action="/delete-user" method="post">
+                <input type="hidden" name="userId" value='#(user.id)'></input>
+                <input type="submit" value="Sil"></input>
+            </form>
+            </div>
+            </li>
+        }
+    </ol>
+    } else {
+        <h6>Kaydedilmiş kullanıcı yok.</h6>
+    }
+}
+
+#embed("base-admin-bs")

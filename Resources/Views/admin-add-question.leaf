@@ -1,55 +1,92 @@
 #set("content") {
+    <div class="container p-3 my-3 bg-dark text-white">
+    
+    <h1>Yeni Soru</h1>
+
     <form action="/admin/add-question" method="post">
-    <label for="title-test"><h3 class="label-add-question">Sınav başlığı:</h3></label>
-    <input type="text" class="text-add-question" id="title-test" name="titleOfTest" placeHolder="Yazınız...">
-    <label for="title-question"><h3 class="label-add-question">Soru başlığı:</h3></label>
-    <input type="text" class="text-add-question" id="title-question" name="titleOfQuestion" placeHolder="Yazınız...">
-    <label for="question-stem"><h3 class="label-add-question">Soru kökü:</h3></label>
-    <input type="text" class="text-add-question" id="question-stem" name="questionStem" placeHolder="Yazınız...">
-    <label for="choice-a"><h3 class="label-add-question">A seçeneği:</h3></label>
-    <input type="text" class="text-add-question" id="choice-a" name="choiceA" placeHolder="Yazınız...">
-    <label for="choice-b"><h3 class="label-add-question">B seçeneği:</h3></label>
-    <input type="text" class="text-add-question" id="choice-b" name="choiceB" placeHolder="Yazınız...">
-    <label for="choice-c"><h3 class="label-add-question">C seçeneği:</h3></label>
-    <input type="text" class="text-add-question" id="choice-c" name="choiceC" placeHolder="Yazınız...">
-    <label for="choice-d"><h3 class="label-add-question">D seçeneği:</h3></label>
-    <input type="text" class="text-add-question" id="choice-d" name="choiceD" placeHolder="Yazınız...">
-    <label for="choice-e"><h3 class="label-add-question">E seçeneği:</h3></label>
-    <input type="text" class="text-add-question" id="choice-e" name="choiceE" placeHolder="Yazınız...">
-    <label for="note-taken"><h3 class="label-add-question">Eklenen not:</h3></label>
-    <input type="text" class="text-add-question" id="note-taken" name="noteTaken" placeHolder="Yazınız...">
+    <div class="form-group">
+        <label for="title-test"><h4>Sınav başlığı:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="title-test" name="titleOfTest" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="title-question"><h4>Soru başlığı:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="title-question" name="titleOfQuestion" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="question-stem"><h4>Soru kökü:</h4></label>
+        <textarea type="text" class="form-control form-control-lg text-light bg-dark" rows="5" id="question-stem" name="questionStem" placeHolder="Yazınız..."></textarea>
+    </div>
+    <div class="form-group">
+        <label for="choice-a"><h4>A seçeneği:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="choice-a" name="choiceA" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="choice-b"><h4>B seçeneği:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="choice-b" name="choiceB" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="choice-c"><h4>C seçeneği:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="choice-c" name="choiceC" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="choice-d"><h4>D seçeneği:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="choice-d" name="choiceD" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="choice-e"><h4>E seçeneği:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="choice-e" name="choiceE" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="note-taken"><h4>Eklenen not:</h4></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="note-taken" name="noteTaken" placeHolder="Yazınız...">
+    </div>
+    <!-- radio buttons -->
+    <div class="form-group">
+        <label for="is-answered"><h4>Soru cevaplandı mı?</h4></label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="is-answered" name="isAnswered"  aria-label="Evet" value="true">
+            <label class="form-check-label" for="is-answered">
+            Evet
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="is-answered" name="isAnswered"  aria-label="Hayır" value="true" checked>
+            <label class="form-check-label" for="is-answered">
+            Hayır
+            </label>
+        </div>
+    </div>
+    <!-- radio buttons -->
+    <div class="form-group">
+        <label for="is-bookmark-added"><h4>Soruya yer işareti konuldu mu?</h4></label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="is-bookmark-added" name="isBookmarkAdded"  aria-label="Evet" value="true">
+            <label class="form-check-label" for="is-bookmark-added">
+            Evet
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="is-bookmark-added" name="isBookmarkAdded" aria-label="Hayır" value="false" checked>
+            <label class="form-check-label" for="is-bookmark-added">
+            Hayır
+            </label>
+        </div>
+    </div>
     
-    <label for="is-answered"><h3 class="label-add-question">Soru cevaplandı mı?</h3></label>
-        <label class="container1" for="is-answered">
-        <p>Evet</p>
-        <input type="radio" id="is-answered" name="isAnswered"  aria-label="Evet" value="true">
-        <span class="checkmark1"></span>
-        </label>
-        <label class="container1" for="is-answered">
-        <p>Hayır</p>
-        <input type="radio" id="is-answered" name="isAnswered"  checked="checked" aria-label="Hayır" value="false">
-        <span class="checkmark1"></span>
-        </label>
-    <label for="is-bookmark-added"><h3 class="label-add-question">Soruya yer işareti konuldu mu?</h3></label>
-        <label class="container1" for="is-bookmark-added">
-        <p>Evet</p>
-        <input type="radio" id="is-bookmark-added" name="isBookmarkAdded"  aria-label="Evet" value="true">
-        <span class="checkmark1"></span>
-        </label>
-        <label class="container1" for="is-bookmark-added">
-        <p>Hayır</p>
-        <input type="radio" id="is-bookmark-added" name="isBookmarkAdded" checked="checked" aria-label="Hayır" value="false">
-        <span class="checkmark1"></span>
-        </label>
+    <div class="form-group">
+        <label for="audio-question"><h3 class="label-add-question">Soru ses dosyası:</h3></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="audio-question" name="audioOfQuestion" placeHolder="Yazınız...">
+    </div>
+    <div class="form-group">
+        <label for="audio-choices"><h3 class="label-add-question">Seçenekler ses dosyası:</h3></label>
+        <input type="text" class="form-control form-control-lg text-light bg-dark" id="audio-choices" name="audioOfChoices" placeHolder="Yazınız...">
+    </div>
     
-    <label for="audio-question"><h3 class="label-add-question">Soru ses dosyası:</h3></label>
-    <input type="text" class="text-add-question" id="audio-question" name="audioOfQuestion" placeHolder="Yazınız...">
-    <label for="audio-choices"><h3 class="label-add-question">Seçenekler ses dosyası:</h3></label>
-    <input type="text" class="text-add-question" id="audio-choices" name="audioOfChoices" placeHolder="Yazınız...">
-    
-    <input type="submit">
+    <input type="submit" value="Ekle" class="btn btn-secondary btn-lg btn-block">
     </form>
+    
+    </div>
 }
 
-#embed("base-admin")
+#embed("base-admin-bs")
 

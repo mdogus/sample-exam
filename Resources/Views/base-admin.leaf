@@ -46,7 +46,8 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-content" id="myDropdownForUsers">
-    <a href="#">Tüm Kullanıcılar</a>
+    <a href="/admin/new-user">Yeni Kullanıcı</a>
+    <a href="/admin/all-users">Tüm Kullanıcılar</a>
     <a href="#">Kullanıcı Sınav Kayıtları</a>
   </div>
   </div>

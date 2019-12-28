@@ -2,4 +2,4 @@
     <h3>Hoş geldiniz!</h3>
 }
 
-#embed("base-admin")
+#embed("base-admin-bs")
