@@ -21,6 +21,11 @@ struct DeleteRequestForTurkishQuestion: Content {
 /// Register your application's routes here.
 public func routes(_ router: Router) throws {
     
+    //It works!
+    router.get { req in
+        return "It works!"
+    }
+    
     //Home page
     router.get("/") { request -> Future<View> in
         return try request.view().render("home-page")
