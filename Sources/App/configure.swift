@@ -24,7 +24,13 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(middlewares)
 
     /// Configure a PostgreSQL database
-    let databasePostgreSQLConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "mustafa_dogus", database: "examapp_db")
+    let databasePostgreSQLConfig: PostgreSQLDatabaseConfig //(hostname: "localhost", username: "mustafa_dogus", database: "examapp_db")
+    if let url = Environment.get("DATABASE_URL") {
+        databasePostgreSQLConfig = PostgreSQLDatabaseConfig(url: url)!
+    } else {
+        databasePostgreSQLConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "mustafa_dogus")
+    }
+    
     let database = PostgreSQLDatabase(config: databasePostgreSQLConfig)
     
     // Register the configured PostgreSQL database to the database config.
