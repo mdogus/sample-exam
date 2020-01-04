@@ -23,14 +23,12 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
     services.register(middlewares)
 
-    /// Configure a SQLite database
-    //let sqlite = try SQLiteDatabase(storage: .memory)
-
-    // Register the configured SQLite database to the database config.
-    var databases = DatabasesConfig()
+    /// Configure a PostgreSQL database
+    let databasePostgreSQLConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "mustafa_dogus", database: "examapp_db")
+    let database = PostgreSQLDatabase(config: databasePostgreSQLConfig)
     
-    let databaseConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "postgres", database: "sampleexam")
-    let database = PostgreSQLDatabase(config: databaseConfig)
+    // Register the configured PostgreSQL database to the database config.
+    var databases = DatabasesConfig()
     
     databases.add(database: database, as: .psql)
     services.register(databases)
