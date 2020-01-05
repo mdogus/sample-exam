@@ -3,6 +3,12 @@ import Vapor
 import FluentPostgreSQL
 import Leaf
 
+public struct PostgresDefaults {
+    public static let hostname = "localhost"
+    public static let username = "mustafa_dogus"
+    public static let port = 5432
+}
+
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
     ///Register providers first
@@ -24,11 +30,25 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(middlewares)
 
     /// Configure a PostgreSQL database
-    let databasePostgreSQLConfig: PostgreSQLDatabaseConfig //(hostname: "localhost", username: "mustafa_dogus", database: "examapp_db")
+    let databasePostgreSQLConfig: PostgreSQLDatabaseConfig //(hostname: "localhost", username: "mustafa_dogus", database: "mustafa_dogus")
+    
     if let url = Environment.get("DATABASE_URL") {
         databasePostgreSQLConfig = PostgreSQLDatabaseConfig(url: url)!
     } else {
-        databasePostgreSQLConfig = PostgreSQLDatabaseConfig(hostname: "localhost", username: "mustafa_dogus")
+        let hostname = Environment.get("DATABASE_HOSTNAME") ?? PostgresDefaults.hostname
+        let username = Environment.get("DATABASE_USERNAME") ?? PostgresDefaults.username
+        let database = Environment.get("DATABASE_DATABASE")
+        let password = Environment.get("DATABASE_PASSWORD")
+
+        let port : Int
+
+        if let portString = Environment.get("DATABASE_PORT") {
+            port = Int(portString) ?? PostgresDefaults.port
+        } else {
+            port = PostgresDefaults.port
+        }
+
+        databasePostgreSQLConfig = PostgreSQLDatabaseConfig(hostname: hostname, port: port, username: username, database: database, password: password, transport: .cleartext)
     }
     
     let database = PostgreSQLDatabase(config: databasePostgreSQLConfig)
